@@ -1,0 +1,77 @@
+/*
+1) count, count1 ????
+2) разобраться в работе методов ????
+3) Тесты ++++
+FIRST VARIANT int ret = new File(path).listFiles().length;
+
+
+SECOND VARIANT int count = 0;
+        DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path1);
+        for (Path path2:directoryStream) {
+            count++;
+        }
+        return count;
+ THiRD VARIANT
+        try (Stream<Path> files = Files.list(Paths.get(path))) {
+            count = (int) files.count();
+        }
+        return count;
+
+  FOURTH VARIANT
+  /*      Path path1 = Paths.get(path);
+       // Files.walkFileTree(path1, new FileManager());
+        Path path3 = Files.walkFileTree(path1, new HashSet<FileVisitOption>(), Integer.MAX_VALUE, new FileManager());
+        return count;
+            @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        return FileVisitResult.CONTINUE;
+    }
+
+        */
+
+//File file = new File("path");/*            for (int i = 0; i < ; i++) {
+//                if (file.isFile()){
+//                    count++;
+//                }
+//            }*/
+
+
+/*        fileManager.copy("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Papka\\testFileSecond.txt",
+                        "C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory");
+      fileManager.move("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory\\testFileSecond.txt",
+                         "C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол");*/
+/*
+ fileManager.copy("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Тестовый файл.docx",
+
+                "C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Dreams1");
+
+        fileManager.move("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Тестовый файл.docx",
+                "C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Тестовая папка");
+/*      System.out.println(fileManager.countFiles("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Dreams"));
+        System.out.println();
+      System.out.println(fileManager.countDirs("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Dreams"));*/
+/*
+        Path testFile1 = Files.createFile(Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testFile111.txt"));
+        System.out.println("Был ли файл успешно создан?");
+        System.out.println(Files.exists(Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testFile111.txt")));
+
+        //создание директории
+        Path testDirectory = Files.createDirectory(Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory"));
+        System.out.println("Была ли директория успешно создана?");
+        System.out.println(Files.exists(Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory")));
+*/
+
+
+        //перемещаем файл с рабочего стола в директорию testDirectory. Перемещать надо с указанием имени файла в папке!
+/*        File file = new File("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testFile111.txt");
+        System.out.println(file.exists());
+        File file1 = new File("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory\\testFile111.txt");
+        System.out.println(file1.exists());
+        Files.move(Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testFile111.txt"),
+                Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory\\testFile111.txt"), REPLACE_EXISTING);
+
+        //копируем файл с рабочего стола в директорию testDirectory2.
+        Files.copy(Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\Papka"),
+        Paths.get("C:\\Users\\DzeN-BooK\\OneDrive\\Рабочий стол\\testDirectory\\Papka"), REPLACE_EXISTING);
+*/
+
